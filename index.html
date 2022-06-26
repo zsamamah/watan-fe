@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>elcom</title>
+  </head>
+  <body>
+    <form id="calc_grades_form" onsubmit="calc_gpa(event);">
+    <div class="c_container">
+      <div class="flex_right">
+        <h6>المعدل التراكمي السابق (اختياري)</h6>
+        <div>
+          <input
+            type="number"
+            min="0"
+            id="p_hours"
+            placeholder="الساعات المقطوعة"
+          />
+          <input type="text" id="p_gpa" placeholder="المعدل السابق" />
+        </div>
+      </div>
+      <div class="flex_right">
+        <p>مواد الفصل</p>
+        <table class="gpa_table" onload="load_table()">
+          <tbody id="gpa_table"></tbody>
+        </table>
+      </div>
+      <div class="table_btns">
+        <button type="button" onclick="add_row()">اضافة مادة</button>
+        <button type="submit">حساب المعدل</button>
+      </div>
+    </div>
+    <div class="conc_grades">
+        <div>
+            <p>الساعات الداخلة في حساب المعدل التراكمي : <span id="all_hrs" class="bold"></span></p>
+            <p>الساعات الداخلة في حساب المعدل الفصلي : <span id="sem_hrs" class="bold"></span></p>
+        </div>
+        <div>
+            <p>المعدل التراكمي <span id="all_gpa" class="bold"></span></p>
+            <p>المعدل التراكمي <span id="sem_gpa" class="bold"></span></p>
+        </div>
+    </div>
+</form>
+    <script src="./script.js"></script>
+  </body>
+</html>
