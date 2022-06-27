@@ -192,6 +192,7 @@
 }
 #calc_grades_form input,#calc_grades_form select{
     text-align: right;
+    -moz-appearance: none;
 }
 
 .p_inputs{
