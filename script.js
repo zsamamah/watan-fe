@@ -1,5 +1,7 @@
 var ai_id=1;
 let table = document.getElementById("gpa_table");
+let gauge = 1;
+let gauge2 = 1
 
 p_grade_template = `<select id="p_grade${ai_id}" class="p_grade">
 <option value="none">الرمز السابق</option>
@@ -93,6 +95,105 @@ function calc_gpa(e){
   document.getElementById("sem_hrs").innerText=hrs_sum
   
 }
+
+//counter1 functionality 
+const gaugeElement = document.getElementsByClassName("gauge")[0];
+
+  function setGaugeValue(gauge, value) {
+    gauge.getElementsByClassName("gauge__fill")[0].style.transform = `rotate(${
+      (value)/8
+    }turn)`;
+    gauge.getElementsByClassName("gauge__cover")[0].textContent = `${value.toFixed(2)}/4`;
+  }
+  
+  if(gauge<2){
+    document.getElementById('indicator_fill').style.backgroundColor='red'
+    if(gauge<=0)
+    document.getElementById('pass_failed').innerText=""
+    else
+    document.getElementById('pass_failed').innerText="ضعيف"
+  }
+  else if(gauge<2.5){
+    document.getElementById('indicator_fill').style.backgroundColor='yellow'
+    document.getElementById('pass_failed').innerText="مقبول"
+  }
+  else if(gauge<3){
+    document.getElementById('indicator_fill').style.backgroundColor='orange'
+    document.getElementById('pass_failed').innerText="جيد"
+  }
+  else if(gauge<3.5){
+    document.getElementById('indicator_fill').style.backgroundColor='#00b9f9'
+    document.getElementById('pass_failed').innerText="جيد جدا"
+  }
+  else if(gauge<=4 && gauge>=3.5){
+    document.getElementById('indicator_fill').style.backgroundColor='green'
+    document.getElementById('pass_failed').innerText="ممتاز"
+  }
+  else{
+    document.getElementById('indicator_fill').style.backgroundColor='grey'
+    document.getElementById('pass_failed').innerText="معدلك الفصلي"
+  }
+
+  setGaugeValue(gaugeElement[0], gauge);
+
+
+  //counter2 functionality 
+const gaugeElement2 = document.getElementsByClassName("gauge")[1];
+
+function setGaugeValue2(gauge2, value) {
+  gauge2.getElementsByClassName("gauge__fill")[1].style.transform = `rotate(${
+    (value)/8
+  }turn)`;
+  gauge2.getElementsByClassName("gauge__cover")[1].textContent = `${value.toFixed(2)}/4`;
+}
+
+if(gauge2<2){
+  document.getElementById('indicator_fill2').style.backgroundColor='red'
+  if(gauge2<=0)
+  document.getElementById('pass_failed2').innerText=""
+  else
+  document.getElementById('pass_failed2').innerText="ضعيف"
+}
+else if(gauge2<2.5){
+  document.getElementById('indicator_fill2').style.backgroundColor='yellow'
+  document.getElementById('pass_failed2').innerText="مقبول"
+}
+else if(gauge2<3){
+  document.getElementById('indicator_fill2').style.backgroundColor='orange'
+  document.getElementById('pass_failed2').innerText="جيد"
+}
+else if(gauge2<3.5){
+  document.getElementById('indicator_fill2').style.backgroundColor='#00b9f9'
+  document.getElementById('pass_failed2').innerText="جيد جدا"
+}
+else if(gauge2<=4 && gauge2>=3.5){
+  document.getElementById('indicator_fill2').style.backgroundColor='green'
+  document.getElementById('pass_failed2').innerText="ممتاز"
+}
+else{
+  document.getElementById('indicator_fill2').style.backgroundColor='grey'
+  document.getElementById('pass_failed2').innerText="معدلك الفصلي"
+}
+
+setGaugeValue2(gaugeElement2[1], gauge2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 load_table();
