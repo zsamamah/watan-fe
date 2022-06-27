@@ -11,8 +11,8 @@
     <form id="calc_grades_form" onsubmit="calc_gpa(event);">
       <div class="c_container">
         <div class="flex_right">
-          <h6>المعدل التراكمي السابق (اختياري)</h6>
-          <div>
+          <h6 class="p_heading">المعدل التراكمي السابق (اختياري)</h6>
+          <div class="p_inputs">
             <input
               type="number"
               min="0"
@@ -23,25 +23,32 @@
           </div>
         </div>
         <div class="flex_right">
-          <p>مواد الفصل</p>
+          <p style="font-weight:bold">مواد الفصل</p>
           <table class="gpa_table" onload="load_table()">
             <tbody id="gpa_table"></tbody>
           </table>
         </div>
         <div class="table_btns">
-          <button type="button" onclick="add_row()">اضافة مادة</button>
-          <button type="submit">حساب المعدل</button>
+          <div>
+            <button type="button" class="insert_row" onclick="add_row()">
+              <img src="./add.svg" alt="add">
+            </button>
+          </div>
+          <div>
+            <button type="submit">حساب المعدل</button>
+          </div>
         </div>
       </div>
-
+      
+      <hr class="c_divider">
       <div class="conc">
         <!-- sem -->
         <div>
           <p>
-            الساعات الداخلة في حساب المعدل الفصلي :
+            الساعات الداخلة في حساب المعدل الفصلي
             <span id="sem_hrs" class="bold"></span>
           </p>
-          <p>المعدل الفصلي <span id="sem_gpa" class="bold"></span></p>
+          <!-- <p class="center">المعدل الفصلي <span id="sem_gpa" class="bold"></span></p> -->
           <!-- indicator start -->
           <div class="indicator_container">
             <div class="gauge" id="indicator">
@@ -57,27 +64,28 @@
           <!-- indicator end -->
         </div>
 
-        <!-- all -->
-        <div>
-          <p>
-            الساعات الداخلة في حساب المعدل التراكمي :
-            <span id="all_hrs" class="bold"></span>
-          </p>
-          <p>المعدل التراكمي <span id="all_gpa" class="bold"></span></p>
-          <!-- indicator start -->
-          <div class="indicator_container">
-            <div class="gauge" id="indicator2">
-              <div class="gauge__body">
-                <div class="gauge__fill" id="indicator_fill2"></div>
-                <div class="gauge__cover"></div>
-              </div>
-            </div>
-            <div>
-              <p id="pass_failed2"></p>
-            </div>
-          </div>
-          <!-- indicator end -->
-        </div>
+                <!-- all -->
+                <div>
+                  <p>
+                    الساعات الداخلة في حساب المعدل التراكمي
+                    <span id="all_hrs" class="bold"></span>
+                  </p>
+                  <!-- <p class="center">المعدل التراكمي <span id="all_gpa" class="bold"></span></p> -->
+                  <!-- indicator start -->
+                  <div class="indicator_container">
+                    <div class="gauge" id="indicator2">
+                      <div class="gauge__body">
+                        <div class="gauge__fill" id="indicator_fill2"></div>
+                        <div class="gauge__cover" id="gauge_cover2"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <p id="pass_failed2"></p>
+                    </div>
+                  </div>
+                  <!-- indicator end -->
+                </div>
+
       </div>
     </form>
 

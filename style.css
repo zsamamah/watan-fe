@@ -2,6 +2,9 @@
 * {
   font-family: "Changa", sans-serif;
 }
+.p_heading{
+    font-size: 1em;
+}
 .c_container {
   /* border: 1px solid black; */
   display: flex;
@@ -18,11 +21,19 @@
     align-items: flex-end;
     width: 100%;
 }
-.delete_row{
-    background-color: white;
-    border: none;
-    color: red;
-    font-size: large;
+.delete_row,.insert_row{
+    /* background-color: white; */
+    /* border: none; */
+    /* color: red; */
+    /* font-size: large; */
+    width: 1.2em;
+    margin-top: 0.5em;
+}
+.insert_row img{
+    width: 1.9em;
+}
+.delete_row:hover,.insert_row:hover{
+    cursor: pointer;
 }
 .gpa_table{
     /* border: 1px solid black; */
@@ -32,6 +43,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding: 0.3em;
 }
 .gpa_table td{
     /* border: 1px solid black; */
@@ -45,10 +57,14 @@
     width: 100%;
 }
 .table_btns{
-    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
     text-align: right;
 }
-.table_btns button,.table_btns a{
+.table_btns button{
     background-color: white;
     border: 1px solid blue;
     border-radius: 3em;
@@ -57,6 +73,15 @@
     margin-left: 0.5em;
     text-decoration: none;
     font-size: 0.9em;
+}
+.table_btns>div:first-child{
+    padding-right: 1em;
+}
+.table_btns>div:last-child{
+    padding-left: 10em;
+}
+.table_btns>div:first-child>button:first-child{
+    border: none;
 }
 .conc_grades{
     display: flex;
@@ -70,11 +95,18 @@
 
 .conc{
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-evenly;
+}
+.conc>div{
+    text-align: right;
 }
 
 .bold{
     font-weight: bold;
+}
+.center{
+    text-align: center;
 }
 
 /* indicator css */
@@ -134,13 +166,61 @@
     box-sizing: border-box;
     color: black;
   }
-#pass_failed{
+#pass_failed,#pass_failed2{
     font-size: 1.6em;
     margin-top: 0;
 }
 
+#calc_grades_form{
+    width: 100%;
+}
+
+.p_inputs input{
+    border-radius: 2em;
+    padding: 0.5em;
+    text-align: right;
+}
+#calc_grades_form button[type="submit"]{
+    margin-top: -50rem;
+    border-color: #23E2D2;
+    background-color: #23E2D2;
+    color: white;
+}
+#calc_grades_form button[type="submit"]:hover{
+    transition-duration:0.4s; 
+    transform: scale(1.1);
+}
+#calc_grades_form input,#calc_grades_form select{
+    text-align: right;
+}
+
+.p_inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
 @media only screen and (max-width:720px) {
+    .c_container{
+        width: 90%;
+    }
     .conc{
         flex-direction: column;
     }
+}
+@media only screen and (max-width:500px) {
+ .table_btns{
+    flex-direction: column;
+    padding-top: 0;
+ }
+ .table_btns>div:last-child{
+    padding-left: 0;
+ }
+ .p_inputs{
+    flex-direction: column;
+ }
+}
+.c_divider{
+    width: 50%;
+    margin: 0 auto;
 }
