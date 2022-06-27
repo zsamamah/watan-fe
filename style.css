@@ -192,13 +192,16 @@
 }
 #calc_grades_form input,#calc_grades_form select{
     text-align: right;
-    -moz-appearance: none;
 }
 
 .p_inputs{
     display: flex;
     flex-direction: row;
     gap: 1em;
+}
+.c_divider{
+    width: 50%;
+    margin: 0 auto;
 }
 
 @media only screen and (max-width:720px) {
@@ -221,7 +224,11 @@
     flex-direction: column;
  }
 }
-.c_divider{
-    width: 50%;
-    margin: 0 auto;
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        #calc_grades_form input,#calc_grades_form select{
+            border: none;
+            background-color: red;
+        }
+    }
 }
