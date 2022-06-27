@@ -213,9 +213,13 @@
     }
 }
 @media only screen and (max-width:500px) {
+    .c_container{
+        width: 100%;
+    }
  .table_btns{
     flex-direction: column;
     padding-top: 0;
+    width: 100%;
  }
  .table_btns>div:last-child{
     padding-left: 0;
@@ -223,12 +227,4 @@
  .p_inputs{
     flex-direction: column;
  }
-}
-@media not all and (min-resolution:.001dpcm) { 
-    @supports (-webkit-appearance:none) {
-        #calc_grades_form input,#calc_grades_form select{
-            border: none;
-            background-color: red;
-        }
-    }
 }
