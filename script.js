@@ -21,7 +21,7 @@ p_grade_template = `<select id="p_grade${ai_id}" class="p_grade">
 <option value="0">F</option>
 </select>`
 
-delete_template = `<img src="./delete1.svg" class="delete_row" id="delete${ai_id}" onclick="delete_row(this)">`
+delete_template = `<img src="https://elcom-team.com/delete1.svg" class="delete_row" id="delete${ai_id}" onclick="delete_row(this)">`
 
 grade_template = `<select id="grade${ai_id}" class="grade">
 <option value="4">A+</option>
@@ -90,12 +90,15 @@ function calc_gpa(e){
   grades = e.target.getElementsByClassName('grade');
   p_grades = e.target.getElementsByClassName('p_grade');
   let hrs_sum='0';
+  let diff='0';
 
   //calc all hours
   for(let i=0;i<hrss.length;i++){
     hrs_sum = parseInt(hrs_sum) + parseInt(hrss[i].value)
-    if(p_grades[i].value!='none' && p_hours!=0)
+    if(p_grades[i].value!='none' && p_hours!=0){
       p_hours = parseInt(p_hours) - parseInt(hrss[i].value)
+      p_gpa = (parseFloat(p_gpa)*parseInt(p_hours))/(parseInt(p_hours)-parseInt(hrss[i].value))
+    }
   }
 
   //calc sem_gpa
@@ -106,7 +109,7 @@ function calc_gpa(e){
   sem_gpa = (parseFloat(p_sum)/parseInt(hrs_sum)).toFixed(2)
 
   //calc all_gpa
-  all_gpa = (((parseFloat(p_gpa)*parseInt(p_hours))+(parseFloat(sem_gpa)*parseInt(hrs_sum)))/(parseInt(hrs_sum) + parseInt(p_hours))).toFixed(2)
+  all_gpa = ((((parseFloat(p_gpa) - parseFloat(diff))*parseInt(p_hours))+(parseFloat(sem_gpa)*parseInt(hrs_sum)))/(parseInt(hrs_sum) + parseInt(p_hours))).toFixed(2)
 
   //show data in page
   document.getElementById("all_hrs").innerText=": " + (parseInt(hrs_sum) + parseInt(p_hours))
