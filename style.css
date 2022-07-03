@@ -650,9 +650,6 @@ ul.right-side-footer li a:hover {
   form.fix {
     margin: -140px 20px;
   }
-  .gpa-cal {
-    margin-bottom: -20px !important;
-  }
   .mobile.toggle {
     -webkit-box-shadow: 0 -2.5px #2ea3f2, 0 2px 5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 -2.5px #2ea3f2, 0 2px 5px rgba(0, 0, 0, 0.2);

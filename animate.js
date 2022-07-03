@@ -18,7 +18,13 @@ deleteSearch.addEventListener('click',()=>{
 })
 
 
-//randomVar.innerHTML = `<input type="text" class="sending-input"> = ${Math.floor(Math.random()*10)+1} + ${Math.floor(Math.random()*10)+1}     `
+//randomVar.innerHTML = `<input type="text" class="sending-input"> = ${Math.floor(Math.random()*10)+1} + ${Math.floor(Math.random()*10)+1}`
+setTimeout(()=>{
+
+  loading.style.transform ='translateY(100%)';
+  loading.style.opacity = 0;
+  
+  },1000);
 const mobileNav= document.querySelector('.mobile').classList;
 const toggleBtn = document.querySelector('.toggle-btn');
 toggleBtn.addEventListener('click',()=>{
