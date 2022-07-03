@@ -127,14 +127,10 @@ function calc_gpa(e){
 //counter1 functionality 
 
   function setGaugeValue(gauge, value) {
-    console.log(gauge)
     document.getElementsByClassName("gauge__fill")[0].style.transform = `rotate(${
       (value)/8
     }turn)`;
     document.getElementsByClassName("gauge__cover")[0].textContent = `${parseFloat(value).toFixed(2)}/4`;
-
-    console.log(gauge)
-    console.log(typeof(gauge))
     if(parseFloat(value).toFixed(2)<2){
       document.getElementById('indicator_fill').style.backgroundColor='red'
       if(parseFloat(value).toFixed(2)<=0)

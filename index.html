@@ -4,10 +4,193 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style2.css" />
     <title>elcom</title>
   </head>
-  <body>
+  <body style="margin: 0;">
+    <nav id="search-nav">
+      <div class="search-form">
+        <form
+          role="search"
+          method="get"
+          class="et-search-form"
+          action="https://elcom-team.com"
+        >
+          <input
+            type="search"
+            class="et-search-field"
+            placeholder=" ابحث ..."
+            value=""
+            name="s"
+            title="Search for:"
+          />
+          <span id="closeBtn" class="close"> <i class="fa fa-times"></i></span>
+        </form>
+      </div>
+      <span class="search">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="Capa_1"
+          x="0px"
+          y="0px"
+          viewBox="-15 -15 520.005 520.005"
+          style="enable-background: new 0 0 512.005 512.005"
+          xml:space="preserve"
+        >
+          <g>
+            <g>
+              <path
+                d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667    S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6    c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z     M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"
+                stroke="#333"
+                stroke-width="15"
+              ></path>
+            </g>
+          </g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+        </svg>
+      </span>
+      <button class="toggle-btn"><i class="fa fa-bars"></i></button>
+      <ul>
+        <li>
+          <a href="https://elcom-team.com" aria-current="page"
+            >الصفحة الرئيسية</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://elcom-team.com/gradtest.php"
+            aria-current="page"
+            class="active"
+            >حساب المعدل</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://elcom-team.com/%d8%a8%d8%b1%d8%a7%d9%85%d8%ac-%d9%87%d9%86%d8%af%d8%b3%d9%8a%d8%a9/"
+            >برامج هندسية</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://elcom-team.com/%d8%a7%d9%84%d8%af%d8%b9%d9%85-%d8%a7%d9%84%d9%81%d9%86%d9%8a/"
+            >الدعم الفني</a
+          >
+        </li>
+        <!--<li><a href="https://elcom-hu.com/main/%d8%ae%d8%b1%d9%8a%d8%b7%d8%a9-%d8%a7%d9%84%d8%ac%d8%a7%d9%85%d8%b9%d8%a9/">خريطة الجامعة</a></li-->
+        <li>
+          <a
+            href="https://elcom-team.com/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d8%a7%d9%84%d9%85%d9%88%d9%82%d8%b9/"
+            >فريق الموقع</a
+          >
+        </li>
+        <li class="sub-menu-parent">
+          <!--<a href="#"><i class="fa fa-chevron-down"></i>  عائلة ElCoM </a>-->
+          <ul class="sub-menu">
+            <li>
+              <a
+                href="https://elcom-hu.com/main/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/testing-page/"
+                >فريق الهندسة الكهربائية</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://elcom-hu.com/main/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d9%87%d9%86%d8%af%d8%b3%d8%a9-%d8%a7%d9%84%d9%85%d9%8a%d9%83%d8%a7%d8%aa%d8%b1%d9%88%d9%86%d9%8a%d9%83%d8%b3/"
+              >
+                فريق هندسة الميكاترونكس</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://elcom-hu.com/main/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d9%87%d9%86%d8%af%d8%b3%d8%a9-%d8%a7%d9%84%d8%ad%d8%a7%d8%b3%d9%88%d8%a8/"
+                >فريق هندسة الحاسوب</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://elcom-team.com/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d8%a7%d9%84%d9%85%d9%88%d9%82%d8%b9/"
+                >فريق الموقع</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <a href="https://elcom-team.com"
+        ><img
+          src="https://elcom-team.com/wp-content/uploads/2021/12/ElCoM-new-logo.png"
+          alt="elcom-logo"
+          class="logo-img"
+          data-height-percentage="94"
+          data-actual-width="1519.2"
+          data-actual-height="639.5"
+      /></a>
+    </nav>
+    <div class="mobile ">
+      
+      <ul>
+             <li style="
+          order: 6;
+      ">
+                 <a href="https://elcom-team.com/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d8%a7%d9%84%d9%85%d9%88%d9%82%d8%b9/">فريق الموقع
+          </a></li>     
+              <!-- <li>
+              
+           
+              <a href="#"><i class="fa fa-chevron-down"></i>  عائلة ElCoM </a>
+               <ul>
+       
+                   <li><a href="https://elcom-hu.com/main/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/testing-page/">فريق الهندسة الكهربائية</a></li>
+                   <li><a href="https://elcomhu.com/main/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d9%87%d9%86%d8%af%d8%b3%d8%a9-%d8%a7%d9%84%d9%85%d9%8a%d9%83%d8%a7%d8%aa%d8%b1%d9%88%d9%86%d9%8a%d9%83%d8%b3/"> فريق هندسة الميكاترونكس</a></li>
+                   <li><a href="https://elcom-hu.com/main/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d9%87%d9%86%d8%af%d8%b3%d8%a9-%d8%a7%d9%84%d8%ad%d8%a7%d8%b3%d9%88%d8%a8/">فريق هندسة الحاسوب</a></li>
+                   <li><a href="https://elcom-hu.com/main/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%81%d8%b1%d9%8a%d9%82-%d8%a7%d9%84%d9%85%d9%88%d9%82%d8%b9/">فريق الموقع</a></li>
+       
+               </ul>
+           
+           -->
+           
+      
+             <li style="
+          
+          order: 4;
+      "><a href="https://elcom-team.com/%d8%a7%d9%84%d8%af%d8%b9%d9%85-%d8%a7%d9%84%d9%81%d9%86%d9%8a/">الدعم الفني</a></li>
+             <li style="
+          order: 3;
+      "><a href="https://elcom-team.com/%d8%a8%d8%b1%d8%a7%d9%85%d8%ac-%d9%87%d9%86%d8%af%d8%b3%d9%8a%d8%a9/">برامج هندسية</a></li>
+             <li style="
+          order: 2;
+      "><a href="#" target="#" aria-current="page" class="active">حساب المعدل</a></li>
+             <li style="
+          order: 1;
+      "><a href="https://elcom-team.com" aria-current="page">الصفحة الرئيسية</a></li>
+             
+         </ul>
+      </div>
+      <section class="gpa-img">
+        <img src="https://elcom-team.com/GPA-stuff.svg">
+    </section>
     <form id="calc_grades_form" onsubmit="calc_gpa(event);">
       <div class="c_container">
         <div class="flex_right">
@@ -23,7 +206,7 @@
           </div>
         </div>
         <div class="flex_right">
-          <p style="font-weight:bold">مواد الفصل</p>
+          <p style="font-weight: bold">مواد الفصل</p>
           <table class="gpa_table" onload="load_table()">
             <tbody id="gpa_table"></tbody>
           </table>
@@ -31,7 +214,7 @@
         <div class="table_btns">
           <div>
             <button type="button" class="insert_row" onclick="add_row()">
-              <img src="https://elcom-team.com/add.svg" alt="add">
+              <img src="https://elcom-team.com/add.svg" alt="add" />
             </button>
           </div>
           <div>
@@ -39,8 +222,8 @@
           </div>
         </div>
       </div>
-      
-      <hr class="c_divider">
+
+      <hr class="c_divider" />
       <div class="conc">
         <!-- sem -->
         <div>
@@ -64,31 +247,231 @@
           <!-- indicator end -->
         </div>
 
-                <!-- all -->
-                <div>
-                  <p>
-                    الساعات الداخلة في حساب المعدل التراكمي
-                    <span id="all_hrs" class="bold"></span>
-                  </p>
-                  <!-- <p class="center">المعدل التراكمي <span id="all_gpa" class="bold"></span></p> -->
-                  <!-- indicator start -->
-                  <div class="indicator_container">
-                    <div class="gauge" id="indicator2">
-                      <div class="gauge__body">
-                        <div class="gauge__fill" id="indicator_fill2"></div>
-                        <div class="gauge__cover" id="gauge_cover2"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <p id="pass_failed2"></p>
-                    </div>
-                  </div>
-                  <!-- indicator end -->
-                </div>
-
+        <!-- all -->
+        <div>
+          <p>
+            الساعات الداخلة في حساب المعدل التراكمي
+            <span id="all_hrs" class="bold"></span>
+          </p>
+          <!-- <p class="center">المعدل التراكمي <span id="all_gpa" class="bold"></span></p> -->
+          <!-- indicator start -->
+          <div class="indicator_container">
+            <div class="gauge" id="indicator2">
+              <div class="gauge__body">
+                <div class="gauge__fill" id="indicator_fill2"></div>
+                <div class="gauge__cover" id="gauge_cover2"></div>
+              </div>
+            </div>
+            <div>
+              <p id="pass_failed2"></p>
+            </div>
+          </div>
+          <!-- indicator end -->
+        </div>
       </div>
     </form>
 
+    <div class="footer" style="background: black; height: auto">
+      <section class="links">
+        <ul class="right-side-footer">
+          <h1>روابط جامعية</h1>
+          <li>
+            <a href="https://hu.edu.jo">
+              <i class="far fa-check-circle" aria-hidden="true"></i>موقع
+              الجامعة</a
+            >
+          </li>
+          <li>
+            <a href="https://reg1.hu.edu.jo/" target="_blank" data-icon="R">
+              <i class="far fa-check-circle" aria-hidden="true"></i>بوابة الطالب
+              ١</a
+            >
+          </li>
+          <li>
+            <a href="https://reg2.hu.edu.jo/" target="_blank" data-icon="R">
+              <i class="far fa-check-circle" aria-hidden="true"></i>بوابة الطالب
+              ٢</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://newstudents.hu.edu.jo/"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>موقع الطالب
+              المستجد</a
+            >
+          </li>
+
+          <li>
+            <a href="http://www.mlms.hu.edu.jo/" target="_blank" data-icon="R">
+              <i class="far fa-check-circle" aria-hidden="true"></i>Moodle</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://hu.edu.jo/unitCenter/class_a.aspx?unitid=40000000"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>جريدة
+              المواد</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/TheHashemiteUniversity/"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>صفحة الجامعة
+              على الفيسبوك</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://hu.edu.jo/unitcenter/index.aspx?typ=49&unitid=40000000"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>التقويم
+              الجامعي</a
+            >
+          </li>
+        </ul>
+
+        <ul class="left-side-footer">
+          <h1>روابط اللجنة</h1>
+          <li>
+            <a
+              href="https://www.facebook.com/groups/hu.elcom/?ref=share"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>قروب اللجنة
+              على الفيسبوك</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/profile.php?id=100012349083511"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>بروفايل
+              اللجنة على فيسبوك</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://web.facebook.com/groups/1311240435995982/?ref=share&_rdc=1&_rdr"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>قروب سنة
+              اولى للكهربائية</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://web.facebook.com/groups/1250004358758692/?ref=share&_rdc=1&_rdr"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>قروب سنة
+              اولى للحاسوب</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://web.facebook.com/groups/194236099460077/?ref=share&_rdc=1&_rdr"
+              target="_blank"
+              data-icon="R"
+            >
+              <i class="far fa-check-circle" aria-hidden="true"></i>قروب سنة
+              اولى للميكاترونكس</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="order"
+        style="background: black; height: 100%; overflow: hidden"
+      >
+        <h1>يمكنك أيضا متابعتنا على</h1>
+        <ul>
+          <li>
+            <a
+              href="https://www.instagram.com/elcomhu/?utm_medium=copy_link"
+              target="_blank"
+              ><i class="fab fa-instagram" aria-hidden="true"></i>
+              Instgram
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/HU.ElCoM/" target="_blank">
+              <i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/channel/UCg_Rsye6e1unRvbA13ZdCeg"
+              target="_blank"
+              ><i class="fab fa-youtube-square" aria-hidden="true"></i> Youtube
+            </a>
+          </li>
+        </ul>
+        <p
+          style="
+            font-family: 'Janna', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            padding-bottom: 20px;
+          "
+        >
+          © جميع الحقوق محفوظة للجنة الكم
+        </p>
+      </section>
+    </div>
+
+    <!--back to top button-->
+  <button class="backToTopBtn" id="topBtn">
+    <i class="fa fa-chevron-up"></i>
+</button>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./script.js"></script>
+    <script src="./animate.js"></script>
+      <!-- Messenger المكون الإضافي "دردشة" Code -->
+      <div id="fb-root"></div>
+
+      <!-- Your المكون الإضافي "دردشة" code -->
+      <div id="fb-customer-chat" class="fb-customerchat">
+      </div>
+  
+      <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "353305901480103");
+        chatbox.setAttribute("attribution", "biz_inbox");
+  
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v12.0'
+          });
+        };
+  
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/ar_AR/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
   </body>
 </html>
