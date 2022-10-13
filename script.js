@@ -23,6 +23,8 @@ p_grade_template = `<select id="p_grade${ai_id}" class="p_grade">
 
 delete_template = `<img src="https://elcom-team.com/delete1.svg" class="delete_row" id="delete${ai_id}" onclick="delete_row(this)">`
 
+temp_td = '<img src="https://elcom-team.com/delete1.svg" style="visibility:hidden" class="delete_row">'
+
 grade_template = `<select id="grade${ai_id}" class="grade">
 <option value="4">A+</option>
 <option value="3.75">A</option>
@@ -49,7 +51,7 @@ function load_table() {
     let p_grade = row.insertCell(1)
     let grade = row.insertCell(2)
     let hours = row.insertCell(3)
-    // delete_btn.innerHTML=delete_template
+    delete_btn.innerHTML=temp_td
     p_grade.innerHTML=p_grade_template
     grade.innerHTML=grade_template
     hours.innerHTML=hours_template

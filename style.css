@@ -1,9 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Changa&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Changa&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
 * {
-  font-family: "Changa", sans-serif;
+  /* font-family: "Changa", sans-serif; */
+  font-family: 'Almarai', sans-serif;
+  line-height: 2.2em;
 }
 .p_heading{
-    font-size: 1em;
+    font-size: 1.2em;
     width: 100%;
     text-align: center;
 }
@@ -28,8 +31,8 @@
     width: 1.2em;
     margin-top: 0.5em;
 }
-.insert_row img{
-    width: 1.9em;
+.insert_row{
+    width: 2.08em;
 }
 .delete_row:hover,.insert_row:hover{
     cursor: pointer;
@@ -54,14 +57,20 @@
 }
 .gpa_table select{
     width: 100%;
+    padding: 1em;
+}
+::placeholder {
+  padding: 0.5em;
+  font-size: 1.2em;
 }
 .table_btns{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 90%;
     text-align: right;
+    gap: 1.1em;
 }
 .table_btns button{
     background-color: white;
@@ -74,13 +83,16 @@
     font-size: 0.9em;
 }
 .table_btns>div:first-child{
-    padding-right: 1em;
+    padding-left: 0.8em;
 }
-.table_btns>div:last-child{
+/* .table_btns>div:last-child{
     padding-left: 10em;
-}
+} */
 .table_btns>div:first-child>button:first-child{
     border: none;
+}
+#gpa_table>tr>td:first-child{
+  width: fit-content;
 }
 .conc_grades{
     display: flex;
@@ -91,7 +103,11 @@
     flex-direction: row;
     justify-content: space-around;
 }
-
+.text-center{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
 .conc{
     display: flex;
     flex-direction: row-reverse;
@@ -120,7 +136,6 @@
   .gauge {
     width: 100%;
     max-width: 250px;
-    font-family: "Roboto", sans-serif;
     font-size: 32px;
     color: #004033;
   }
@@ -186,6 +201,8 @@
     border-color: #23E2D2;
     background-color: #23E2D2;
     color: white;
+    font-size: 1.13em;
+    font-weight: bold;
 }
 #calc_grades_form button[type="submit"]:hover{
     transition-duration:0.4s; 
@@ -205,6 +222,7 @@
 .p_paragraph{
   width: 100%;
   text-align: center;
+  font-size: 1.2em;
 }
 .c_divider{
     width: 50%;
@@ -410,8 +428,9 @@ form.fix {
 .footer h1 {
   line-height: 1em;
   color: #ffffff;
-  font-size: 26px !important;
-  font-weight: 500;
+  font-size: 2em !important;
+  font-weight: 900;
+  text-align: right;
 }
 .footer ul {
   list-style: none;
@@ -420,7 +439,7 @@ form.fix {
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: space-around;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -429,7 +448,7 @@ form.fix {
   flex-wrap: wrap;
 }
 .footer ul li {
-  font-size: 0.8em;
+  font-size: 1em;
   /* margin: 16px 100px; */
 }
 .footer ul li a {
@@ -467,17 +486,17 @@ form.fix {
   color: #0b73f2;
 }
 section.links {
-  padding: 0px 130px !important;
+  /* padding: 0px 130px !important; */
   background-color: #242424;
   display: -webkit-box;
   display: -ms-flexbox;
-  /* display: flex; */
+  display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-pack: start !important;
   -ms-flex-pack: start !important;
-  justify-content: flex-start !important;
-  gap: 151px;
+  justify-content: space-evenly !important;
+  /* gap: 151px; */
 }
 ul.right-side-footer {
   display: -webkit-box;
@@ -521,9 +540,9 @@ ul.right-side-footer li a {
   color: #2ea3f2;
 }
 ul.left-side-footer li,
-ul.right-side-footer li {
+/* ul.right-side-footer li {
   margin: 5px 100px;
-}
+} */
 section form h1 {
   padding-top: initial !important;
 }
@@ -633,6 +652,8 @@ nav {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
 }
 img.logo-img {
   max-height: 54%;
@@ -718,7 +739,7 @@ ul.sub-menu li a {
 }
 .gpa-cal {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 30px;
   margin-bottom: 30px;
   color: #444;
   font-weight: 700;
@@ -774,7 +795,7 @@ input[type="text"],
 input[type="number"] {
   border: none;
   border: 2px solid #6e6c6c;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   outline: none;
   padding: 4px;
 }
@@ -951,6 +972,11 @@ input[type="search"]::-webkit-search-cancel-button {
     width: auto !important;
     margin-right: -10px;
   }
+  .order>ul{
+    flex-direction: column-reverse;
+    gap: 1em;
+    margin: 2em 0;
+  }
   .footer section.order ul li:nth-of-type(2) {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
@@ -1110,6 +1136,17 @@ input[type="search"]::-webkit-search-cancel-button {
   section.links{
     gap: 10px;
   }
+  section.links>div{
+    width: 100%;
+    text-align: right;
+  }
+  section.links>div>ul{
+    margin: 0;
+  }
+  section.links>div>h1{
+    width: 90%;
+    text-align: right;
+  }
   .footer ul li{
     margin: 0 !important;
   }
@@ -1134,3 +1171,25 @@ input[type="search"]::-webkit-search-cancel-button {
   flex-direction: column;
 }
 }
+
+/* .input-wrapper {
+  position: relative;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 6px;
+  position: relative;
+  width: 200px;
+  margin: 10px;
+  line-height: 6ex;
+}
+
+label {
+  position: absolute;
+  top: 0.2ex;
+  z-index: 1;
+  left: 12em;
+  background-color: white;
+  padding: 0 5px;
+} */
