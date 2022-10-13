@@ -109,8 +109,21 @@ function calc_gpa(e){
   sem_gpa = (parseFloat(p_sum)/parseInt(hrs_sum)).toFixed(2)
 
   //calc all_gpa
-  all_gpa = ((((parseFloat(p_gpa) - parseFloat(diff))*parseInt(p_hours))+(parseFloat(sem_gpa)*parseInt(hrs_sum)))/(parseInt(hrs_sum) + parseInt(p_hours))).toFixed(2)
+  all_gpa = parseFloat((((parseFloat(p_gpa) - parseFloat(diff))*parseInt(p_hours))+(parseFloat(sem_gpa)*parseInt(hrs_sum))))
 
+  let counter = 0
+  for(let i=0;i<p_grades.length;i++){
+    if(p_grades[i].value!='none'){
+      all_gpa= parseFloat(parseFloat(all_gpa)-parseFloat(parseInt(hrss[i].value)*parseFloat(grades[i].value)))
+      counter+=parseInt(hrss[i].value)
+    }
+  }
+  console.log('sum_gpa = ', all_gpa)
+  console.log('total hours = ',p_hours)
+  console.log('counter = ',counter)
+  console.log('sem hours', hrs_sum)
+
+  all_gpa = parseFloat(parseFloat(all_gpa)/(parseInt(p_hours) + parseInt(hrs_sum))).toFixed(2)
   //show data in page
   document.getElementById("all_hrs").innerText=": " + (parseInt(hrs_sum) + parseInt(p_hours))
   document.getElementById("sem_hrs").innerText=": " + hrs_sum
@@ -119,6 +132,8 @@ function calc_gpa(e){
   //play with indicators
   gauge = sem_gpa
   gauge2 = all_gpa
+  console.log('sem = ',sem_gpa)
+  console.log('all = ',all_gpa)
   setGaugeValue(gaugeElement, gauge);
   setGaugeValue2(gaugeElement2,gauge2)
   
@@ -156,7 +171,7 @@ function calc_gpa(e){
     }
     else{
       document.getElementById('indicator_fill').style.backgroundColor='grey'
-      document.getElementById('pass_failed').innerText="معدلك الفصلي"
+      document.getElementById('pass_failed').innerText="معدلك التراكمي"
     }
 
   }
