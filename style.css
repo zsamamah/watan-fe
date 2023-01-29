@@ -652,7 +652,7 @@ nav {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
 }
 img.logo-img {
@@ -998,7 +998,7 @@ input[type="search"]::-webkit-search-cancel-button {
     box-shadow: 0 -2.5px #2ea3f2, 0 2px 5px rgba(0, 0, 0, 0.2);
     display: block;
     z-index: 5;
-    height: 315px;
+    height: fit-content;
   }
   .form-group {
     -ms-flex-wrap: wrap;
@@ -1193,3 +1193,8 @@ label {
   background-color: white;
   padding: 0 5px;
 } */
+
+
+.force-hide{
+  display: none;
+}

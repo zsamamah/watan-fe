@@ -1,3 +1,4 @@
+console.log("hello zaid")
 let table = document.getElementById("gpa_table");
 const gaugeElement = document.getElementById("indicator");
 const gaugeElement2 = document.getElementById("indicator2");
@@ -61,7 +62,6 @@ function load_table() {
 function delete_row(o){
   let p=o.parentNode.parentNode;
   if(ai_id==1){
-
     return;
   }
   else{
@@ -120,10 +120,10 @@ function calc_gpa(e){
       counter+=parseInt(hrss[i].value)
     }
   }
-  console.log('sum_gpa = ', all_gpa)
-  console.log('total hours = ',p_hours)
-  console.log('counter = ',counter)
-  console.log('sem hours', hrs_sum)
+  // console.log('sum_gpa = ', all_gpa)
+  // console.log('total hours = ',p_hours)
+  // console.log('counter = ',counter)
+  // console.log('sem hours', hrs_sum)
 
   all_gpa = parseFloat(parseFloat(all_gpa)/(parseInt(p_hours) + parseInt(hrs_sum))).toFixed(2)
   //show data in page
@@ -134,8 +134,8 @@ function calc_gpa(e){
   //play with indicators
   gauge = sem_gpa
   gauge2 = all_gpa
-  console.log('sem = ',sem_gpa)
-  console.log('all = ',all_gpa)
+  // console.log('sem = ',sem_gpa)
+  // console.log('all = ',all_gpa)
   setGaugeValue(gaugeElement, gauge);
   setGaugeValue2(gaugeElement2,gauge2)
   
