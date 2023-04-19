@@ -8,12 +8,6 @@ let gauge2 = 0;
 
 p_grade_template = `<select id="p_grade${ai_id}" class="p_grade">
 <option value="none">الرمز السابق</option>
-<option value="4">A+</option>
-<option value="3.75">A</option>
-<option value="3.5">A-</option>
-<option value="3.25">B+</option>
-<option value="3">B</option>
-<option value="2.75">B-</option>
 <option value="2.5">C+</option>
 <option value="2.25">C</option>
 <option value="2">C-</option>
@@ -93,52 +87,37 @@ function calc_gpa(e){
   p_grades = e.target.getElementsByClassName('p_grade');
   let hrs_sum='0';
   let diff='0';
+  let diff_hrs = '0';
 
   //calc all hours
   for(let i=0;i<hrss.length;i++){
     hrs_sum = parseInt(hrs_sum) + parseInt(hrss[i].value)
     if(p_grades[i].value!='none' && p_hours!=0){
-      p_hours = parseInt(p_hours) - parseInt(hrss[i].value)
-      p_gpa = (parseFloat(p_gpa)*parseInt(p_hours))/(parseInt(p_hours)-parseInt(hrss[i].value))
+      diff = parseFloat(diff) + parseInt(hrss[i].value)*parseFloat(p_grades[i].value)
+      diff_hrs = parseInt(diff_hrs) + parseInt(hrss[i].value)
     }
   }
 
-  //calc sem_gpa
+  //calc sem gpa
   p_sum='0'
   for(let i=0;i<hrss.length;i++){
     p_sum = parseFloat(p_sum) + (parseInt(hrss[i].value)*parseFloat(grades[i].value))
   }
   sem_gpa = (parseFloat(p_sum)/parseInt(hrs_sum)).toFixed(2)
 
-  //calc all_gpa
-  all_gpa = parseFloat((((parseFloat(p_gpa) - parseFloat(diff))*parseInt(p_hours))+(parseFloat(sem_gpa)*parseInt(hrs_sum))))
+  p_g = parseFloat(p_gpa)*parseInt(p_hours) - parseFloat(diff)
+  c_g = parseFloat(sem_gpa)*parseInt(hrs_sum)
+  ttl_hrs = parseInt(hrs_sum) + parseInt(p_hours) - parseInt(diff_hrs)
+  all_gpa = parseFloat((parseFloat(p_g) + parseFloat(c_g))/parseInt(ttl_hrs)).toFixed(2)
 
-  let counter = 0
-  for(let i=0;i<p_grades.length;i++){
-    if(p_grades[i].value!='none'){
-      all_gpa= parseFloat(parseFloat(all_gpa)-parseFloat(parseInt(hrss[i].value)*parseFloat(grades[i].value)))
-      counter+=parseInt(hrss[i].value)
-    }
-  }
-  // console.log('sum_gpa = ', all_gpa)
-  // console.log('total hours = ',p_hours)
-  // console.log('counter = ',counter)
-  // console.log('sem hours', hrs_sum)
 
-  all_gpa = parseFloat(parseFloat(all_gpa)/(parseInt(p_hours) + parseInt(hrs_sum))).toFixed(2)
-  //show data in page
-  document.getElementById("all_hrs").innerText=": " + (parseInt(hrs_sum) + parseInt(p_hours))
+
+  document.getElementById("all_hrs").innerText=": " + (parseInt(ttl_hrs))
   document.getElementById("sem_hrs").innerText=": " + hrs_sum
-  
-
-  //play with indicators
   gauge = sem_gpa
   gauge2 = all_gpa
-  // console.log('sem = ',sem_gpa)
-  // console.log('all = ',all_gpa)
   setGaugeValue(gaugeElement, gauge);
   setGaugeValue2(gaugeElement2,gauge2)
-  
 }
 
 //counter1 functionality 
