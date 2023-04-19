@@ -1,4 +1,3 @@
-console.log("hello zaid")
 let table = document.getElementById("gpa_table");
 const gaugeElement = document.getElementById("indicator");
 const gaugeElement2 = document.getElementById("indicator2");
@@ -34,6 +33,7 @@ grade_template = `<select id="grade${ai_id}" class="grade">
 <option value="1.5">D</option>
 <option value="0">F</option>
 </select>`
+console.log("Zaid Samamah, V3")
 
 hours_template = `<input type="number" id="hours${ai_id}" class="hrs" min="1" placeholder="ساعات المادة" required>`
 
