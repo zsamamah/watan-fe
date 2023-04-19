@@ -101,7 +101,13 @@ function calc_gpa(e){
   //calc sem gpa
   p_sum='0'
   for(let i=0;i<hrss.length;i++){
-    p_sum = parseFloat(p_sum) + (parseInt(hrss[i].value)*parseFloat(grades[i].value))
+    temp = grades[i].value
+    if(p_grades[i].value!='none' && p_hours!=0){
+      if(parseFloat(p_grades[i].value)>parseFloat(grades[i].value)){
+        temp = p_grades[i].value
+      }
+    }
+    p_sum = parseFloat(p_sum) + (parseInt(hrss[i].value)*parseFloat(temp))
   }
   sem_gpa = (parseFloat(p_sum)/parseInt(hrs_sum)).toFixed(2)
 
