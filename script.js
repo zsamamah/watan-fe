@@ -31,7 +31,7 @@ grade_template = `<select id="grade${ai_id}" class="grade">
 <option value="2">C-</option>
 <option value="1.75">D+</option>
 <option value="1.5">D</option>
-<option value="0">F</option>
+<option value="0.75">F</option>
 </select>`
 console.log("Zaid Samamah, V3")
 

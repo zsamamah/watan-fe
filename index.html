@@ -12,167 +12,1212 @@
       referrerpolicy="no-referrer"
     />
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" type="image/ico" href="../favicon.ico">
-    <title>Elcom | حساب المعدل</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <style>
+      /* @import url('https://fonts.googleapis.com/css2?family=Changa&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
+* {
+  /* font-family: "Changa", sans-serif; */
+  font-family: 'Almarai', sans-serif;
+  line-height: 2.2em;
+}
+.p_heading{
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+}
+.c_container {
+  border: 3px solid black;
+  border-radius: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+.flex_right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+.delete_row,.insert_row{
+    width: 1.2em;
+    margin-top: 0.5em;
+}
+.insert_row{
+    width: 2.08em;
+}
+.delete_row:hover,.insert_row:hover{
+    cursor: pointer;
+}
+.gpa_table{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+.gpa_table tr{
+    display: flex;
+    justify-content: space-around;
+    /* align-items: space-evenly; */
+    width: 100%;
+    padding: 0.3em;
+}
+.gpa_table td{
+    text-align: right;
+    width: 20%;
+}
+.gpa_table input{
+    width: 100%;
+}
+.gpa_table select{
+    width: 100%;
+    padding: 1em;
+}
+::placeholder {
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+.table_btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    text-align: right;
+    gap: 1.1em;
+}
+.table_btns button{
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 3em;
+    padding: 0.2em 0.5em;
+    color: blue;
+    margin-left: 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+.table_btns>div:first-child{
+    padding-left: 0.8em;
+}
+/* .table_btns>div:last-child{
+    padding-left: 10em;
+} */
+.table_btns>div:first-child>button:first-child{
+    border: none;
+}
+#gpa_table>tr>td:first-child{
+  width: fit-content;
+}
+.conc_grades{
+    display: flex;
+    flex-direction: column;
+}
+.conc_grades >div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.text-center{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.conc{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    margin-top: 2em;
+}
+.conc>div{
+    text-align: right;
+}
+
+.bold{
+    font-weight: bold;
+}
+.center{
+    text-align: center;
+}
+
+/* indicator css */
+.indicator_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+  }
+  
+  .gauge {
+    width: 100%;
+    max-width: 250px;
+    font-size: 32px;
+    color: #004033;
+  }
+  
+  .gauge__body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background: #b4c0be;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+  }
+  
+  .gauge__fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background: #009578;
+    transform-origin: center top;
+    transform: rotate(0.25turn);
+    transition: transform 0.2s ease-out;
+  }
+  
+  .gauge__cover {
+    width: 75%;
+    height: 150%;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25%;
+    box-sizing: border-box;
+    color: black;
+  }
+#pass_failed,#pass_failed2{
+    font-size: 1.6em;
+    margin-top: 0;
+}
+
+#calc_grades_form{
+    width: 100%;
+    margin: 5em 0;
+}
+
+.p_inputs input{
+    border-radius: 2em;
+    padding: 0.5em;
+    text-align: right;
+}
+#calc_grades_form button[type="submit"]{
+    margin-top: -50rem;
+    border-color: #23E2D2;
+    background-color: #23E2D2;
+    color: white;
+    font-size: 1.13em;
+    font-weight: bold;
+}
+#calc_grades_form button[type="submit"]:hover{
+    transition-duration:0.4s; 
+    transform: scale(1.1);
+}
+#calc_grades_form input,#calc_grades_form select{
+    text-align: right;
+}
+
+.p_inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    width: 100%;
+    justify-content: center;
+}
+.p_paragraph{
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+}
+.c_divider{
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* saed css */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+button,
+select,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+form.fix {
+  margin-bottom: 40px;
+}
+.backToTopBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  right: 35px;
+  bottom: 123px;
+  width: 40px;
+  height: 40px;
+  background: #1ed0cc;
+  border-radius: 50%;
+  font-size: 17px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transform: translateX(200%);
+  transform: translateX(200%);
+  opacity: 0;
+  z-index: 99;
+  -webkit-transition: opacity 0.55s ease-in-out 0.15s,
+    -webkit-transform 0.6s ease-in-out 0.17s;
+  transition: opacity 0.55s ease-in-out 0.15s,
+    -webkit-transform 0.6s ease-in-out 0.17s;
+  transition: transform 0.6s ease-in-out 0.17s, opacity 0.55s ease-in-out 0.15s;
+  transition: transform 0.6s ease-in-out 0.17s, opacity 0.55s ease-in-out 0.15s,
+    -webkit-transform 0.6s ease-in-out 0.17s;
+}
+.form-group {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 3%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.form-input {
+  font-size: 15px;
+  background-color: #eee;
+  border-radius: 0 !important;
+  padding: 15px !important;
+  margin: 0px 10px;
+  width: 50%;
+  border: 0 !important;
+}
+.border {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  left: 0px !important;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  margin: 0 auto;
+  border: 3px solid #6e6c6c;
+  width: 959px !important;
+  border-radius: 20px;
+  z-index: 1;
+  background-image: linear-gradient(75deg, #1fe0ba, #1bb3eb);
+}
+.mobile {
+  display: none;
+  position: absolute;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  max-width: 300px;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left: 50%;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  border-radius: 1px;
+  height: 0;
+  overflow: hidden;
+}
+.search {
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-weight: 100;
+  color: #666;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.search svg {
+  width: 17px;
+  fill: #777;
+}
+.search svg:hover {
+  fill: #2ea3f2;
+}
+.mobile ul {
+  list-style: none;
+}
+.mobile ul li {
+  margin-bottom: 17px;
+  text-align: center;
+  -webkit-box-shadow: 0 1px #f0f0f0;
+  box-shadow: 0 1px #f0f0f0;
+  width: calc(100% - 50px);
+  line-height: 28px;
+  padding: 5px 0;
+}
+.mobile ul li:hover {
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0.4;
+}
+.mobile ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+.mobile ul li a {
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  opacity: 0.7 !important;
+}
+.mobile ul li a:hover {
+  opacity: 0.8;
+}
+.mobile ul li a.active {
+  color: #44d89e;
+}
+.mobile ul li a i {
+  font-size: 15px;
+}
+.toggle-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  color: #2ea3f2;
+  font-size: 30px;
+  display: none;
+}
+.footer {
+  background: #000000;
+  color: #fff;
+  text-align: center;
+}
+.footer h1 {
+  line-height: 1em;
+  color: #ffffff;
+  font-size: 2em !important;
+  font-weight: 900;
+  text-align: right;
+}
+.footer ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.footer ul li {
+  font-size: 1em;
+  /* margin: 16px 100px; */
+}
+.footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.footer section.order ul li:nth-of-type(1) {
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+.footer section.order ul li:nth-of-type(2) {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+.footer section.order ul li:nth-of-type(3) {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}
+.footer ul li a i {
+  margin-left: 10px;
+}
+.footer ul li:nth-of-type(3) a:hover {
+  color: #e02b20;
+}
+.footer ul li:nth-of-type(1) a:hover {
+  color: #833ab4;
+}
+.footer ul li:nth-of-type(2) a:hover {
+  color: #0b73f2;
+}
+section.links {
+  /* padding: 0px 130px !important; */
+  background-color: #242424;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start !important;
+  -ms-flex-pack: start !important;
+  justify-content: space-evenly !important;
+  /* gap: 151px; */
+}
+ul.right-side-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  white-space: nowrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+ul.left-side-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-end;
+  white-space: nowrap;
+  justify-content: flex-start;
+}
+ul.right-side-footer h1 {
+  -webkit-transform: translateX(-95px);
+  transform: translateX(-95px);
+}
+ul.left-side-footer h1 {
+  -webkit-transform: translateX(-97px);
+  transform: translateX(-97px);
+}
+ul.left-side-footer li a,
+ul.right-side-footer li a {
+  font-size: 1.2em !important;
+  color: #2ea3f2;
+}
+ul.left-side-footer li,
+/* ul.right-side-footer li {
+  margin: 5px 100px;
+} */
+section form h1 {
+  padding-top: initial !important;
+}
+.send {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.sending-input {
+  border: 1px solid #bbb !important;
+  background-color: #eee !important;
+  max-width: 50px !important;
+  padding: 16px 0px !important;
+  color: black !important;
+  border-radius: 0 !important;
+  font-size: 20px !important;
+  -webkit-border-radius: 0 !important;
+  -webkit-appearance: none !important;
+  margin-right: 10px !important;
+  text-align: center;
+}
+button.footer-btn {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  color: #2ea3f2;
+  background: transparent;
+  border: 2px solid #2ea3f2;
+  border-radius: 20px;
+  -webkit-transition: border 0.1s ease-in-out;
+  transition: border 0.1s ease-in-out;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+button.footer-btn span i {
+  display: none;
+}
+button.footer-btn span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+button.footer-btn:hover {
+  border: 2px solid transparent;
+}
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+ul.left-side-footer li a:hover,
+ul.right-side-footer li a:hover {
+  color: #fff !important;
+}
+.left-side-table .imagetable {
+  margin-bottom: 30px;
+}
+#content-wrapper {
+  background: none;
+  overflow: hidden;
+}
+#content-top {
+  display: none;
+}
+#content-bottom {
+  display: none;
+}
+.entry,
+form {
+  height: 100% !important;
+}
+form {
+  position: relative;
+}
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  background-color: #fff;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  z-index: 3;
+  padding-right: 30px;
+  border-bottom: 1.5px solid #e0e0e0;
+  color: rgba(0, 0, 0, 0.6) !important;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  /* position: sticky; */
+  top: 0;
+}
+img.logo-img {
+  max-height: 54%;
+  width: 180px;
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  margin-left: 30px;
+  margin-top: 11px;
+}
+nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  flex: 1;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+nav ul li a {
+  margin: 0 14px;
+  font-size: 16.5px;
+  text-decoration: none;
+  color: #6a6969;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  opacity: 0.8;
+}
+.sub-menu-parent {
+  position: relative;
+}
+.sub-menu-parent a i {
+  font-size: 10px;
+}
+.sub-menu-parent a {
+  padding: 40px 0;
+}
+.sub-menu {
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  width: 240px;
+  background-color: #fff;
+  border-top: 3px solid #44d89e;
+  top: 55px;
+  left: 10px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 150px;
+  display: none;
+}
+.sub-menu li {
+  margin: 0.8em 0;
+  text-align: left;
+}
+ul.sub-menu li a {
+  letter-spacing: 0;
+  font-size: 17px;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.7);
+}
+.sub-menu-parent:hover ul.sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+.gpa-img {
+  width: 100%;
+}
+.gpa-cal {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #444;
+  font-weight: 700;
+  line-height: 1em;
+}
+.notes {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+  padding: 20px 50px;
+  background-color: #333;
+  white-space: wrap;
+}
+.loading {
+  top: 0;
+  left: 0;
+  height: 100%;
+  -webkit-transition: opacity 0.4s ease-in-out 0.2s,
+    -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.4s ease-in-out 0.2s, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out 0.2s;
+  transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out 0.2s,
+    -webkit-transform 0.5s ease-in-out;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+  width: 100%;
+  background-color: #4adcc4;
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">%0A<path fill="%23F2EEEE" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3%0A  c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z" transform="rotate(217.341 50 50)">%0A<animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="2s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>%0A</path>%0A<path fill="%23F2EEEE" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7%0A  c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z" transform="rotate(-74.682 50 50)">%0A<animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="-360 50 50" repeatCount="indefinite"></animateTransform>%0A</path>%0A<path fill="%23F2EEEE" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5%0A  L82,35.7z" transform="rotate(217.341 50 50)">%0A<animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="2s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>%0A</path>%0A</svg>');
+  background-repeat: no-repeat;
+  background-position: center 300px;
+  background-size: 100px;
+  position: fixed;
+  z-index: 9999999999;
+}
+a.active {
+  color: #44d89e;
+}
+#wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto !important;
+}
+input[type="text"],
+input[type="number"] {
+  border: none;
+  border: 2px solid #6e6c6c;
+  /* border-radius: 10px; */
+  outline: none;
+  padding: 4px;
+}
+input#tit {
+  width: 350px;
+  background: #ffffff;
+  font-size: 5em;
+  letter-spacing: 0em;
+  color: #000;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input#download {
+  width: 350px;
+  background: #01df01;
+  padding: 8px 14px 10px;
+  border: 1px solid #088a4b;
+  cursor: pointer;
+  font-size: 5em;
+  letter-spacing: 0em;
+  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0);
+  color: #fff;
+  -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73,
+    0px 10px 5px #999;
+  box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73,
+    0px 10px 5px #999;
+  border-radius: 10px;
+}
+input#bigbutton:hover,
+input#bigbutton:focus {
+  color: #dfe7ea;
+  -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73,
+    0px 2px 5px #999;
+  box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73,
+    0px 2px 5px #999;
+}
+input#round {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  position: absolute;
+  left: 239px;
+  bottom: 40px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: #1fe0ba;
+  text-align: center;
+  border-radius: 35px;
+  padding: 0 20px 0 20px;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+input#round:hover {
+  opacity: 0.8;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+table.imagetable {
+  color: #fff;
+  border-width: 1px;
+  border-color: #999999;
+  border-collapse: collapse;
+  font-size: 15px;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+}
+table.imagetable th {
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+  background: #1fe0ba;
+  border-width: 2px;
+  padding: 10px;
+  border-style: solid;
+  border-color: #6e6c6c;
+}
+table.imagetable td {
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+  background: white;
+  border-width: 2px;
+  padding: 8.2px;
+  border-style: solid;
+  border-color: #6e6c6c;
+  color: black;
+  text-align: center;
+}
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+.search-form {
+  position: absolute;
+  height: 80px;
+  max-width: 831px;
+  width: 100%;
+  z-index: 5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+nav.search-down .search-form {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.search form {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.search-form input {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  font-size: 1.2rem;
+  padding: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+.search-form input::-webkit-input-placeholder {
+  font-size: 21px;
+  font-weight: 600;
+}
+.search-form input:-ms-input-placeholder {
+  font-size: 21px;
+  font-weight: 600;
+}
+.search-form input::-ms-input-placeholder {
+  font-size: 21px;
+  font-weight: 600;
+}
+.search-form input::placeholder {
+  font-size: 21px;
+  font-weight: 600;
+}
+.search-form .close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@media (max-width: 1000px) {
+  #wrapper,
+  #content-wrapper,
+  #content_wrapper,
+  #main,
+  .the-single-post,
+  .entry,
+  form {
+    height: auto !important;
+  }
+  .footer section.order ul li:nth-of-type(1) {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  .search-form {
+    width: auto !important;
+    margin-right: -10px;
+  }
+  .order>ul{
+    flex-direction: column-reverse;
+    gap: 1em;
+    margin: 2em 0;
+  }
+  .footer section.order ul li:nth-of-type(2) {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  a.active {
+    color: #222 !important;
+  }
+  .footer section.order ul li:nth-of-type(3) {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  form.fix {
+    margin: -140px 20px;
+  }
+  .mobile.toggle {
+    -webkit-box-shadow: 0 -2.5px #2ea3f2, 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2.5px #2ea3f2, 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    z-index: 5;
+    height: fit-content;
+  }
+  .form-group {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .form-input {
+    width: 100%;
+    width: calc(100% - 15px);
+    font-size: 15px;
+    background-color: #eee;
+    border-radius: 0 !important;
+    padding: 15px !important;
+    margin: 10px 10px;
+    border: 0 !important;
+  }
+  table.imagetable {
+    width: 500px;
+  }
+  .left-side-table {
+    -webkit-box-ordinal-group: 3 !important;
+    -ms-flex-order: 2 !important;
+    order: 2 !important;
+  }
+  .left-side-table .imagetable {
+    margin-top: 30px;
+  }
+  .footer h1 {
+    font-size: 30px;
+  }
+  input#round {
+    background-color: #1fe0ba !important;
+    border: 1px solid #ffffff;
+    position: static !important;
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #ffffff !important;
+    border-radius: 35px;
+    padding: 0 20px 0 20px;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+    margin-top: 30px;
+    width: 100%;
+  }
+  input#round:hover {
+    -webkit-transform: scale(1) !important;
+    transform: scale(1) !important;
+  }
+  .backToTopBtn {
+    right: 19px !important;
+    bottom: 113px;
+  }
+  img.logo-img {
+    max-height: 54%;
+    width: 102.63px !important;
+    display: inline-block;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    margin-left: 45px !important;
+    margin-top: 11px;
+  }
+  .notes {
+    text-align: center;
+    font-size: 16px !important;
+    padding: 20px 10px !important;
+    min-width: 300px;
+  }
+  .gpa-img {
+    width: 100%;
+    margin-top: 0px !important;
+  }
+  .border {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    z-index: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    top: 0 !important;
+    right: 50% !important;
+    -webkit-transform: translateX(50%) scale(0.7) !important;
+    transform: translateX(50%) scale(0.7) !important;
+    width: 550px !important;
+    padding: 50px 30px !important;
+    border: 0 !important;
+    background: none !important;
+  }
+  ul.left-side-footer,
+  ul.right-side-footer {
+    margin: 5px -44px;
+  }
+  ul.right-side-footer {
+    -webkit-box-ordinal-group: 3 !important;
+    -ms-flex-order: 2 !important;
+    order: 2 !important;
+  }
+  ul.right-side-footer {
+    -webkit-box-ordinal-group: 2 !important;
+    -ms-flex-order: 1 !important;
+    order: 1 !important;
+  }
+  nav ul li {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .toggle-btn {
+    display: block;
+    margin-right: -10px;
+    font-size: 22px;
+  }
+  .loading {
+    background-size: 100px !important;
+    background-position: center center !important;
+    height: 100% !important;
+  }
+  .footer p {
+    font-size: 1rem !important;
+  }
+}
+
+@media only screen and (max-width:720px) {
+  .c_container{
+      width: 90%;
+  }
+  .conc{
+      flex-direction: column;
+  }
+  section.links{
+    gap: 10px;
+  }
+  section.links>div{
+    width: 100%;
+    text-align: right;
+  }
+  section.links>div>ul{
+    margin: 0;
+  }
+  section.links>div>h1{
+    width: 90%;
+    text-align: right;
+  }
+  .footer ul li{
+    margin: 0 !important;
+  }
+  .links ul{
+    width: 20% !important;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .c_container{
+      width: 100%;
+  }
+.table_btns{
+  flex-direction: column;
+  padding-top: 0;
+  width: 100%;
+}
+.table_btns>div:last-child{
+  padding-left: 0;
+}
+.p_inputs{
+  flex-direction: column;
+}
+}
+
+/* .input-wrapper {
+  position: relative;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 6px;
+  position: relative;
+  width: 200px;
+  margin: 10px;
+  line-height: 6ex;
+}
+
+label {
+  position: absolute;
+  top: 0.2ex;
+  z-index: 1;
+  left: 12em;
+  background-color: white;
+  padding: 0 5px;
+} */
+
+
+.force-hide{
+  display: none;
+}
+    </style>
+    <title>حساب المعدل</title>
   </head>
   <body style="margin: 0">
-    <div class="loading"></div>
-    <nav id="search-nav">
-      
-      <div class="search-form force-hide">
-        <form
-          role="search"
-          method="get"
-          class="et-search-form"
-          action="https://elcom-team.com"
-        >
-          <input
-            type="search"
-            class="et-search-field"
-            placeholder=" ابحث ..."
-            value=""
-            name="s"
-            title="Search for:"
-          />
-          <span id="closeBtn" class="close"> <i class="fa fa-times"></i></span>
-        </form>
-      </div>
-      <span class="search force-hide">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          version="1.1"
-          id="Capa_1"
-          x="0px"
-          y="0px"
-          viewBox="-15 -15 520.005 520.005"
-          style="enable-background: new 0 0 512.005 512.005"
-          xml:space="preserve"
-        >
-          <g>
-            <g>
-              <path
-                d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667    S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6    c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z     M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"
-                stroke="#333"
-                stroke-width="15"
-              ></path>
-            </g>
-          </g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-        </svg>
-      </span>
-      <button class="toggle-btn"><i class="fa fa-bars"></i></button>
-      <ul>
-        <li>
-          <a href="https://elcom-team.com" aria-current="page"
-            >الصفحة الرئيسية</a
-          >
-        </li>
-        <li>
-          <a href="#" aria-current="page" class="active">حساب المعدل</a>
-        </li>
-        <li>
-          <a
-            href="https://elcom-team.com/متجر-التطبيقات/"
-          >
-            متجر التطبيقات</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://elcom-team.com/%d8%a7%d9%84%d8%af%d8%b9%d9%85-%d8%a7%d9%84%d9%81%d9%86%d9%8a/"
-            >الدعم الفني</a
-          >
-        </li>
-        <li class="sub-menu-parent">
-          <a href="#"> عن اللجنة <i class="fa fa-chevron-down"></i></a>
-          <ul class="sub-menu">
-            <li>
-              <a
-                href="https://elcom-team.com/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d8%a7%d9%84%d9%82%d8%a7%d8%b9%d8%a9-%d8%a7%d9%84%d8%b0%d9%87%d8%a8%d9%8a%d8%a9/"
-                >القاعة الذهبية</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://elcom-team.com/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%85%d8%a4%d8%b3%d8%b3%d9%8a%d9%86-%d8%a7%d9%84%d9%84%d8%ac%d9%86%d8%a9/"
-                >مؤسسين اللجنة</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li><a href="https://elcom-team.com/%d8%ae%d8%b1%d9%8a%d8%b7%d8%a9-%d8%a7%d9%84%d8%ac%d8%a7%d9%85%d8%b9%d8%a9/">خريطة الجامعة</a></li>
-      </ul>
-      <a href="https://elcom-team.com"
-        ><img
-          src="https://elcom-team.com/wp-content/uploads/2021/12/ElCoM-new-logo.png"
-          alt="elcom-logo"
-          class="logo-img"
-          data-height-percentage="94"
-          data-actual-width="1519.2"
-          data-actual-height="639.5"
-      /></a>
-    </nav>
-    <div class="mobile">
-      <ul>
-        <li style="order: 8">
-          <a
-            href="https://elcom-team.com/%d8%ae%d8%b1%d9%8a%d8%b7%d8%a9-%d8%a7%d9%84%d8%ac%d8%a7%d9%85%d8%b9%d8%a9/"
-            >خريطة الجامعة
-          </a>
-        </li>
-
-        <li style="order: 7">
-          <a href="https://elcom-team.com/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d9%85%d8%a4%d8%b3%d8%b3%d9%8a%d9%86-%d8%a7%d9%84%d9%84%d8%ac%d9%86%d8%a9/">مؤسسين اللجنة</a>
-        </li>
-
-        <li style="order: 6">
-          <a href="https://elcom-team.com/elcom-%d8%b9%d8%a7%d8%a6%d9%84%d8%a9/%d8%a7%d9%84%d9%82%d8%a7%d8%b9%d8%a9-%d8%a7%d9%84%d8%b0%d9%87%d8%a8%d9%8a%d8%a9/">القاعة الذهبية</a>
-        </li>
-
-        <li style="order: 5">
-          <a href="#" >عن اللجنة</a>
-        </li>
-
-        <li style="order: 4">
-          <a
-            href="https://elcom-team.com/%d8%a7%d9%84%d8%af%d8%b9%d9%85-%d8%a7%d9%84%d9%81%d9%86%d9%8a/"
-            >الدعم الفني</a
-          >
-        </li>
-        <li style="order: 3">
-          <a
-            href="https://elcom-team.com/%d9%85%d8%aa%d8%ac%d8%b1-%d8%a7%d9%84%d8%aa%d8%b7%d8%a8%d9%8a%d9%82%d8%a7%d8%aa/"
-            >متجر التطبيقات</a
-          >
-        </li>
-        <li style="order: 2">
-          <a href="#" aria-current="page" class="active"
-            >حساب المعدل</a
-          >
-        </li>
-        <li style="order: 1">
-          <a href="https://elcom-team.com"
-            >الصفحة الرئيسية</a
-          >
-        </li>
-      </ul>
-    </div>
     <section class="gpa-img">
       <img src="https://elcom-team.com/GPA-stuff.svg" />
     </section>
@@ -199,7 +1244,12 @@
         </div>
         <div class="table_btns">
           <div>
-              <img src="https://elcom-team.com/add.svg" onclick="add_row()" alt="add" class="insert_row" />
+            <img
+              src="https://elcom-team.com/add.svg"
+              onclick="add_row()"
+              alt="add"
+              class="insert_row"
+            />
           </div>
           <div>
             <button type="submit">حساب المعدل</button>
@@ -255,184 +1305,11 @@
       </div>
     </form>
 
-    
     <div class="notes">
       <p>
         اذا كنت قد احتسبت مواد على نظام (ناجح/راسب) في الفصول السابقة، فعليك
         الآن جمع الساعات المحسوبة في المعدل فقط وليس عدد الساعات الكلية المقطوعة
       </p>
-    </div>
-    <div class="footer" style="background: black; height: auto">
-      <section class="links">
-        <div>
-          <h1>روابط اللجنة</h1>
-          <ul class="left-side-footer">
-            <li>
-              <a
-                href="https://www.facebook.com/groups/hu.elcom/?ref=share"
-                target="_blank"
-                data-icon="R"
-              >
-                قروب اللجنة على الفيسبوك<i class="far fa-check-circle" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=100012349083511"
-                target="_blank"
-                data-icon="R"
-              >
-                بروفايل
-                اللجنة على فيسبوك<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://web.facebook.com/groups/1311240435995982/?ref=share&_rdc=1&_rdr"
-                target="_blank"
-                data-icon="R"
-              >
-                قروب سنة
-                اولى للكهربائية<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://web.facebook.com/groups/1250004358758692/?ref=share&_rdc=1&_rdr"
-                target="_blank"
-                data-icon="R"
-              >
-                قروب سنة
-                اولى للحاسوب<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-
-            <li>
-              <a
-                href="https://web.facebook.com/groups/194236099460077/?ref=share&_rdc=1&_rdr"
-                target="_blank"
-                data-icon="R"
-              >
-                قروب سنة
-                اولى للميكاترونكس<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h1>روابط جامعية</h1>
-          <ul class="right-side-footer">
-            <li>
-              <a href="https://hu.edu.jo">
-                موقع
-                الجامعة<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a href="https://reg1.hu.edu.jo/" target="_blank" data-icon="R">
-                بوابة
-                الطالب ١<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a href="https://reg2.hu.edu.jo/" target="_blank" data-icon="R">
-                بوابة
-                الطالب ٢<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://newstudents.hu.edu.jo/"
-                target="_blank"
-                data-icon="R"
-              >
-                موقع
-                الطالب المستجد<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-
-            <li>
-              <a
-                href="http://www.mlms.hu.edu.jo/"
-                target="_blank"
-                data-icon="R"
-              >
-                Moodle<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://hu.edu.jo/unitCenter/class_a.aspx?unitid=40000000"
-                target="_blank"
-                data-icon="R"
-              >
-                جريدة
-                المواد<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/TheHashemiteUniversity/"
-                target="_blank"
-                data-icon="R"
-              >
-                صفحة
-                الجامعة على الفيسبوك<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://hu.edu.jo/unitcenter/index.aspx?typ=49&unitid=40000000"
-                target="_blank"
-                data-icon="R"
-              >
-                التقويم
-                الجامعي<i class="far fa-check-circle" aria-hidden="true"></i></a
-              >
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="order"
-        style="background: black; height: 100%; overflow: hidden"
-      >
-        <h2 style="text-align:center" class="follow">يمكنك أيضا متابعتنا على</h2>
-        <ul>
-          <li>
-            <a
-              href="https://www.youtube.com/channel/UCg_Rsye6e1unRvbA13ZdCeg"
-              target="_blank"
-              >Youtube <i class="fab fa-youtube-square" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/HU.ElCoM/" target="_blank">
-              Facebook <i class="fab fa-facebook-square" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/elcomhu/?utm_medium=copy_link"
-              target="_blank"
-              >
-              Instgram <i class="fab fa-instagram" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-        <p
-          style="
-            font-family: 'Janna', sans-serif;
-            font-size: 1rem;
-            font-weight: bold;
-            padding-bottom: 20px;
-          "
-        >
-          © جميع الحقوق محفوظة للجنة الكم
-        </p>
-      </section>
     </div>
 
     <!--back to top button-->
@@ -450,35 +1327,224 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./script.js"></script>
-    <script src="./animate.js"></script>
-    <!-- Messenger المكون الإضافي "دردشة" Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your المكون الإضافي "دردشة" code -->
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
+    <!-- <script src="./script.js"></script> -->
     <script>
-      var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "353305901480103");
-      chatbox.setAttribute("attribution", "biz_inbox");
+      let table = document.getElementById("gpa_table");
+      const gaugeElement = document.getElementById("indicator");
+      const gaugeElement2 = document.getElementById("indicator2");
+      var ai_id = 0;
+      let gauge = 0;
+      let gauge2 = 0;
 
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v12.0",
-        });
-      };
+      p_grade_template = `<select id="p_grade${ai_id}" class="p_grade">
+<option value="none">الرمز السابق</option>
+<option value="2.5">C+</option>
+<option value="2.25">C</option>
+<option value="2">C-</option>
+<option value="1.75">D+</option>
+<option value="1.5">D</option>
+<option value="0">F</option>
+</select>`;
 
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/ar_AR/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
+      delete_template = `<img src="https://elcom-team.com/delete1.svg" class="delete_row" id="delete${ai_id}" onclick="delete_row(this)">`;
+
+      temp_td =
+        '<img src="https://elcom-team.com/delete1.svg" style="visibility:hidden" class="delete_row">';
+
+      grade_template = `<select id="grade${ai_id}" class="grade">
+<option value="4">A+</option>
+<option value="3.75">A</option>
+<option value="3.5">A-</option>
+<option value="3.25">B+</option>
+<option value="3">B</option>
+<option value="2.75">B-</option>
+<option value="2.5">C+</option>
+<option value="2.25">C</option>
+<option value="2">C-</option>
+<option value="1.75">D+</option>
+<option value="1.5">D</option>
+<option value="0.75">F</option>
+</select>`;
+      console.log("Zaid Samamah, V3");
+
+      hours_template = `<input type="number" id="hours${ai_id}" class="hrs" min="1" placeholder="ساعات المادة" required>`;
+
+      function load_table() {
+        // for (let i = 5; i > 0; i--)
+        // add_row()
+        let row = table.insertRow(-1);
+        let delete_btn = row.insertCell(0);
+        let p_grade = row.insertCell(1);
+        let grade = row.insertCell(2);
+        let hours = row.insertCell(3);
+        delete_btn.innerHTML = temp_td;
+        p_grade.innerHTML = p_grade_template;
+        grade.innerHTML = grade_template;
+        hours.innerHTML = hours_template;
+        ai_id++;
+      }
+
+      function delete_row(o) {
+        let p = o.parentNode.parentNode;
+        if (ai_id == 1) {
+          return;
+        } else {
+          p.parentNode.removeChild(p);
+          ai_id--;
+        }
+      }
+
+      function add_row() {
+        let row = table.insertRow(-1);
+        let delete_btn = row.insertCell(0);
+        let p_grade = row.insertCell(1);
+        let grade = row.insertCell(2);
+        let hours = row.insertCell(3);
+        delete_btn.innerHTML = delete_template;
+        p_grade.innerHTML = p_grade_template;
+        grade.innerHTML = grade_template;
+        hours.innerHTML = hours_template;
+        ai_id++;
+      }
+
+      function calc_gpa(e) {
+        e.preventDefault();
+
+        p_gpa = !e.target.p_gpa.value ? "0" : e.target.p_gpa.value;
+        p_hours = !e.target.p_hours.value ? "0" : e.target.p_hours.value;
+        hrss = e.target.getElementsByClassName("hrs");
+        grades = e.target.getElementsByClassName("grade");
+        p_grades = e.target.getElementsByClassName("p_grade");
+        let hrs_sum = "0";
+        let diff = "0";
+        let diff_hrs = "0";
+
+        //calc all hours
+        for (let i = 0; i < hrss.length; i++) {
+          hrs_sum = parseInt(hrs_sum) + parseInt(hrss[i].value);
+          if (p_grades[i].value != "none" && p_hours != 0) {
+            diff =
+              parseFloat(diff) +
+              parseInt(hrss[i].value) * parseFloat(p_grades[i].value);
+            diff_hrs = parseInt(diff_hrs) + parseInt(hrss[i].value);
+          }
+        }
+
+        //calc sem gpa
+        p_sum = "0";
+        for (let i = 0; i < hrss.length; i++) {
+          temp = grades[i].value;
+          if (p_grades[i].value != "none" && p_hours != 0) {
+            if (parseFloat(p_grades[i].value) > parseFloat(grades[i].value)) {
+              temp = p_grades[i].value;
+            }
+          }
+          p_sum =
+            parseFloat(p_sum) + parseInt(hrss[i].value) * parseFloat(temp);
+        }
+        sem_gpa = (parseFloat(p_sum) / parseInt(hrs_sum)).toFixed(2);
+
+        p_g = parseFloat(p_gpa) * parseInt(p_hours) - parseFloat(diff);
+        c_g = parseFloat(sem_gpa) * parseInt(hrs_sum);
+        ttl_hrs = parseInt(hrs_sum) + parseInt(p_hours) - parseInt(diff_hrs);
+        all_gpa = parseFloat(
+          (parseFloat(p_g) + parseFloat(c_g)) / parseInt(ttl_hrs)
+        ).toFixed(2);
+
+        document.getElementById("all_hrs").innerText = ": " + parseInt(ttl_hrs);
+        document.getElementById("sem_hrs").innerText = ": " + hrs_sum;
+        gauge = sem_gpa;
+        gauge2 = all_gpa;
+        setGaugeValue(gaugeElement, gauge);
+        setGaugeValue2(gaugeElement2, gauge2);
+      }
+
+      //counter1 functionality
+
+      function setGaugeValue(gauge, value) {
+        document.getElementsByClassName(
+          "gauge__fill"
+        )[0].style.transform = `rotate(${value / 8}turn)`;
+        document.getElementsByClassName(
+          "gauge__cover"
+        )[0].textContent = `${parseFloat(value).toFixed(2)}/4`;
+        if (parseFloat(value).toFixed(2) < 2) {
+          document.getElementById("indicator_fill").style.backgroundColor =
+            "red";
+          if (parseFloat(value).toFixed(2) <= 0)
+            document.getElementById("pass_failed").innerText = "";
+          else document.getElementById("pass_failed").innerText = "ضعيف";
+        } else if (parseFloat(value).toFixed(2) < 2.5) {
+          document.getElementById("indicator_fill").style.backgroundColor =
+            "yellow";
+          document.getElementById("pass_failed").innerText = "مقبول";
+        } else if (parseFloat(value).toFixed(2) < 3) {
+          document.getElementById("indicator_fill").style.backgroundColor =
+            "orange";
+          document.getElementById("pass_failed").innerText = "جيد";
+        } else if (parseFloat(value).toFixed(2) < 3.5) {
+          document.getElementById("indicator_fill").style.backgroundColor =
+            "#00b9f9";
+          document.getElementById("pass_failed").innerText = "جيد جدا";
+        } else if (
+          parseFloat(value).toFixed(2) <= 4 &&
+          parseFloat(value).toFixed(2) >= 3.5
+        ) {
+          document.getElementById("indicator_fill").style.backgroundColor =
+            "green";
+          document.getElementById("pass_failed").innerText = "ممتاز";
+        } else {
+          document.getElementById("indicator_fill").style.backgroundColor =
+            "grey";
+          document.getElementById("pass_failed").innerText = "معدلك التراكمي";
+        }
+      }
+
+      // counter2 functionality
+      function setGaugeValue2(gauge2, value) {
+        document.getElementById("indicator_fill2").style.transform = `rotate(${
+          value / 8
+        }turn)`;
+        document.getElementById("gauge_cover2").textContent = `${parseFloat(
+          value
+        ).toFixed(2)}/4`;
+
+        if (parseFloat(value).toFixed(2) < 2) {
+          document.getElementById("indicator_fill2").style.backgroundColor =
+            "red";
+          if (parseFloat(value).toFixed(2) <= 0)
+            document.getElementById("pass_failed2").innerText = "";
+          else document.getElementById("pass_failed2").innerText = "ضعيف";
+        } else if (parseFloat(value).toFixed(2) < 2.5) {
+          document.getElementById("indicator_fill2").style.backgroundColor =
+            "yellow";
+          document.getElementById("pass_failed2").innerText = "مقبول";
+        } else if (parseFloat(value).toFixed(2) < 3) {
+          document.getElementById("indicator_fill2").style.backgroundColor =
+            "orange";
+          document.getElementById("pass_failed2").innerText = "جيد";
+        } else if (parseFloat(value).toFixed(2) < 3.5) {
+          document.getElementById("indicator_fill2").style.backgroundColor =
+            "#00b9f9";
+          document.getElementById("pass_failed2").innerText = "جيد جدا";
+        } else if (
+          parseFloat(value).toFixed(2) <= 4 &&
+          parseFloat(value).toFixed(2) >= 3.5
+        ) {
+          document.getElementById("indicator_fill2").style.backgroundColor =
+            "green";
+          document.getElementById("pass_failed2").innerText = "ممتاز";
+        } else {
+          document.getElementById("indicator_fill2").style.backgroundColor =
+            "grey";
+          document.getElementById("pass_failed2").innerText = "معدلك الفصلي";
+        }
+      }
+
+      load_table();
+      setGaugeValue(gaugeElement[0], gauge);
+      setGaugeValue2(gaugeElement[1], gauge2);
     </script>
+   
   </body>
 </html>
