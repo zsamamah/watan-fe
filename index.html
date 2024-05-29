@@ -48,7 +48,13 @@
     margin-top: 0.5em;
 }
 .insert_row{
-    width: 2.08em;
+    width: 9.08em !important;
+    margin-top: -50rem;
+    border-color: #23E2D2 !important;
+    background-color: #23E2D2 !important;
+    color: white !important;
+    font-size: 1.13em;
+    font-weight: bold;
 }
 .delete_row:hover,.insert_row:hover{
     cursor: pointer;
@@ -1220,13 +1226,13 @@ label {
         background-color: white !important;
   }
     </style>
-    <title>حساب المعدل</title>
+    <title>موقع كُتلة وطن | لحساب المعدل التراكمي</title>
   </head>
   <body style="margin: 0">
-    <section class="gpa-img">
-      <img src="https://elcom-team.com/GPA-stuff.svg" />
-    </section>
-    <h1 class="gpa-cal">حساب المعدل</h1>
+    <center>
+      <img src="./logo.jpg" width="30%"/>
+    </center>
+    <h1 class="gpa-cal">حساب المعدل التراكمي لجامعة آل البيت</h1>
     <form id="calc_grades_form" onsubmit="calc_gpa(event);">
       <div class="c_container">
         <div class="flex_right">
@@ -1249,12 +1255,13 @@ label {
         </div>
         <div class="table_btns">
           <div>
-            <img
+            <!-- <img
               src="https://elcom-team.com/add.svg"
               onclick="add_row()"
               alt="add"
               class="insert_row"
-            />
+            /> -->
+            <button class="insert_row" onclick="add_row()">إضافة مادة</button>
           </div>
           <div>
             <button type="submit">حساب المعدل</button>
